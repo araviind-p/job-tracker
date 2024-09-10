@@ -37,7 +37,7 @@ function Login() {
         dispatch(setCurrentUser(user));
 
         // Save user in localStorage
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('currentUser', user);
 
         toast.success("Login success");
         navigate('/profile');

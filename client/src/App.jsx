@@ -17,7 +17,7 @@ function App() {
     // Load currentUser from localStorage on app startup
     const storedUser = localStorage.getItem('currentUser');
     if (storedUser) {
-      dispatch(setCurrentUser(JSON.parse(storedUser)));
+      dispatch(setCurrentUser(storedUser));
     }
   }, [dispatch]);
 
