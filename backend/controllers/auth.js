@@ -56,7 +56,8 @@ export const login = async (req, res) => {
         res.cookie("accessToken", accessToken, {
             maxAge: 10 * 24 * 60 * 60 * 1000,  // 10 days seconds
             httpOnly: true,
-            sameSite: "lax"
+            sameSite: 'None',  // Use 'None' for cross-site cookies
+            secure: true       // Set to true for HTTPS
         });
 
         // Respond with the login status and access token
