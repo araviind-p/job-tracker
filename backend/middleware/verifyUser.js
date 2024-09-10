@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken'
 
 const verifyUser = (req, res, next) => {
-    const accessToken = req.headers.cookie?.split("=")[1];
+    // const accessToken = req.headers.cookie?.split("=")[1];
+    const accessToken = req.cookies.accessToken;
     if (!accessToken) {
         return res.status(401).json({ success: false, message: "Access token is missing" });
     }
