@@ -26,7 +26,7 @@ const EditJobModal = ({ job, setIsEditing }) => {
 
         try {
             dispatch(setLoading(true))
-            const response = await axios.put(`http://localhost:5000/api/v1/updateJob/${job._id}`, updatedJob);
+            const response = await axios.put(`https://job-tracker-uwoi.onrender.com/api/v1/updateJob/${job._id}`, updatedJob);
             console.log("updated", response.data.updatedJobs);
             dispatch(setJobs(response.data.updatedJobs))
             toast.success("Updated job details");

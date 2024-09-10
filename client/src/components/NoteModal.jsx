@@ -31,7 +31,7 @@ const NoteModal = ({ setIsModalOpen }) => {
       jobStatus,
     };
     try {
-      const response = await axios.post('http://localhost:5000/api/v1/addJobs', noteData);
+      const response = await axios.post('https://job-tracker-uwoi.onrender.com/api/v1/addJobs', noteData);
       console.log(response.data);
       dispatch(setJobs(response.data.jobs))
       toast.success("New job added");

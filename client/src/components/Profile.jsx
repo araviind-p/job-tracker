@@ -29,7 +29,7 @@ const Profile = () => {
     const fetchUserData = async () => {
       try {
         dispatch(setLoading(true));
-        const response = await axios.get('http://localhost:5000/api/v1/profile');
+        const response = await axios.get('https://job-tracker-uwoi.onrender.com/api/v1/profile');
         console.log('In profile page', response);
         // setUser(response.data.user);
         dispatch(setJobs(response.data.user.jobs || []));
@@ -62,7 +62,7 @@ const Profile = () => {
   const handleLogout = async () => {
     try {
       dispatch(setLoading(true))
-      const response = await axios.post('http://localhost:5000/api/auth/logout');
+      const response = await axios.post('https://job-tracker-uwoi.onrender.com/api/auth/logout');
       // localStorage.removeItem('accessToken');
       // dispatch(setAccessToken(""))
       dispatch(setCurrentUser(null))

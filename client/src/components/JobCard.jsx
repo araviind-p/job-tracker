@@ -28,7 +28,7 @@ const JobCard = ({ job }) => {
   const handleDelete = async () => {
     try {
       dispatch(setLoading(true))
-      await axios.delete(`http://localhost:5000/api/v1/deleteJob/${job._id}`);
+      await axios.delete(`https://job-tracker-uwoi.onrender.com/api/v1/deleteJob/${job._id}`);
       toast.success("Job deleted")
       dispatch(removeJob(job._id))
 
