@@ -52,9 +52,17 @@ const JobCard = ({ job }) => {
         {job.companyName}
       </h3>
       <p className="text-gray-700 dark:text-gray-300">Role: {job.jobRole}</p>
-      <p className="text-gray-700 dark:text-gray-300">
-        URL: <a href={job.url.startsWith('http') ? job.url : `https://${job.url}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline break-words truncate overflow-x-hidden">{job.url}</a>
+      <p className="text-gray-700 dark:text-gray-300 overflow-hidden">
+        URL: <a
+          href={job.url.startsWith('http') ? job.url : `https://${job.url}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:underline w-full block break-words truncate"
+        >
+          {job.url}
+        </a>
       </p>
+
       <p className="text-gray-700 dark:text-gray-300">Notes: {job.notes}</p>
       <p className="px-2 py-1 my-2 w-fit rounded-md text-sm font-medium text-gray-700 dark:text-gray-300">
         Status: <span className={`p-2 rounded-md ${getStatusClasses(job.jobStatus)}`}>{job.jobStatus}</span>
